@@ -16,4 +16,9 @@ describe DockingStation do
 
   it { is_expected.to respond_to(:bike) }
 
+  it 'checks whether there is a bike to return' do
+    bike = Bike.new
+    subject.dock(bike)
+    expect(subject.bike).to eq(bike)
+  end
 end
