@@ -9,6 +9,7 @@ class DockingStation
   end
 
   def dock(bike)
+    raise 'Docking Station is full.' if @bike
     @bike = bike
   # This saves bike = Bike.new into @bike. Now the dockingstation has a bike to release.
   end
