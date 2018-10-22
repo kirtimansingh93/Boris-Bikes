@@ -1,6 +1,6 @@
 require 'docking_station'
 describe DockingStation do
-  let (:bike) {double :bike}
+  let (:bike) { double :bike }
   describe ' #release_bike' do
     it { is_expected.to respond_to :release_bike }
     it 'releases a bike' do
@@ -50,15 +50,14 @@ describe DockingStation do
     it 'has a variable capacity' do
       docking_station = DockingStation.new(50)
       50.times { docking_station.dock(bike) }
-      expect{ docking_station.dock(bike) }.to raise_error 'Docking Station is full.'
+      expect { docking_station.dock(bike) }.to raise_error 'Docking Station is full.'
     end
     subject { DockingStation.new }
     it 'defaults capacity' do
       described_class::DEFAULT_CAPACITY.times do
         subject.dock(bike)
       end
-      expect{ subject.dock(bike) }.to raise_error 'Docking Station is full.'
+      expect { subject.dock(bike) }.to raise_error 'Docking Station is full.'
     end
   end
-
 end
