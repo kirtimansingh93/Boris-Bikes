@@ -1,12 +1,31 @@
 # Boris Bikes
 
-## Getting started
+####  Open your terminal and clone the repository.
 
-`git clone https://github.com/kirtimansingh93/Boris-Bikes.git`
+      git clone https://github.com/kirtimansingh93/Boris-Bikes.git
 
-## Running tests
 
-`rspec`
+####  Install gemfiles: rspec(testing), SimpleCov(testing coverage) and rubocop(formatting errors).
+
+      bundle install
+      
+      
+####   How to use the program
+      irb
+         require './lib/docking_station.rb'
+         dockingstation = Dockingstation.new
+         bike = Bike.new
+         bike.report_broken
+         bike.broken?
+         bike.working?
+         dockingstation.dock(bike)
+         dockingstation.release(bike)
+         dockingstation
+      exit
+
+####   View tests and test coverage.
+
+      rspec
 
 ## User Stories
 
@@ -55,3 +74,5 @@ As a maintainer of the system,
 So that I can manage broken bikes and not disappoint users,
 I'd like docking stations to accept returning bikes (broken or not).
 ```
+
+
